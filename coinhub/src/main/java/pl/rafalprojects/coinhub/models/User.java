@@ -2,7 +2,7 @@ package pl.rafalprojects.coinhub.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.rafalprojects.coinhub.models.enums.KindTransaction;
+
 import pl.rafalprojects.coinhub.models.enums.Role;
 
 @Getter
