@@ -1,10 +1,7 @@
 package pl.rafalprojects.coinhub.controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.rafalprojects.coinhub.models.Transaction;
 import pl.rafalprojects.coinhub.services.TransactionService;
 
@@ -22,6 +19,12 @@ public class TransactionController {
     public Iterable<Transaction> getAllTransaction(){
         return transactionService.getTransactions();
 
+    }
+
+    @GetMapping("/transaction/{transactionId}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Transaction getTransactionById(@PathVariable("transactionId") Long id){
+        return transactionService.getTransactionById(id);
     }
 
 }

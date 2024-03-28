@@ -15,4 +15,8 @@ public class TransactionService {
     public Iterable<Transaction> getTransactions() {
         return transactionRepository.findAll();
     }
+
+    public Transaction getTransactionById(Long id) {
+        return transactionRepository.getReferenceById(id);
+    }
 }
