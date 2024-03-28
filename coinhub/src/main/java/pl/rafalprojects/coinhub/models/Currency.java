@@ -6,6 +6,7 @@ import pl.rafalprojects.coinhub.models.enums.Code;
 
 @Getter
 @Setter
+
 public class Currency {
     private Long id;
     private String name;
