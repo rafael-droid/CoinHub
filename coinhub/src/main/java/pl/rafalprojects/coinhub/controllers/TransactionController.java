@@ -6,7 +6,7 @@ import pl.rafalprojects.coinhub.models.Transaction;
 import pl.rafalprojects.coinhub.services.TransactionService;
 
 @RestController
-@RequestMapping("/coinhub")
+@RequestMapping("/coinhub/transaction")
 public class TransactionController {
     private final TransactionService transactionService;
 
@@ -14,14 +14,14 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping("/transaction")
+    @GetMapping("/")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Iterable<Transaction> getAllTransaction(){
         return transactionService.getTransactions();
 
     }
 
-    @GetMapping("/transaction/{transactionId}")
+    @GetMapping("/{transactionId}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Transaction getTransactionById(@PathVariable("transactionId") Long id){
         return transactionService.getTransactionById(id);
